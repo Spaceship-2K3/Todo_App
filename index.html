@@ -4,6 +4,13 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link
             rel="shortcut icon"
             href="./img/favicon.png"
             type="image/x-icon"
@@ -11,7 +18,139 @@
         <title>Todo App</title>
         <link rel="stylesheet" href="./style.css" />
     </head>
-    <body></body>
+    <body>
+        <section id="app">
+            <h1>Todo App</h1>
+            <div class="open-modal" id="add">
+                <p>Add New Task</p>
+                <i class="fa-solid fa-plus"></i>
+            </div>
+
+            <div id="tasks">
+                <h2>Tasks</h2>
+                <ul class="tasks-list">
+                    <li class="task-item">
+                        <h3 class="task-item__title">Task 1</h3>
+                        <p class="task-item__date">2023-7-10</p>
+                        <p class="task-item__desc">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Doloribus, eaque.
+                        </p>
+                        <div class="task-item__controls">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                            <i class="fa-solid fa-trash-can"></i>
+                        </div>
+                    </li>
+                    <li class="task-item">
+                        <h3 class="task-item__title">Task 2</h3>
+                        <p class="task-item__date">2023-7-10</p>
+                        <p class="task-item__desc">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Doloribus, eaque.
+                        </p>
+                        <div class="task-item__controls">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                            <i class="fa-solid fa-trash-can"></i>
+                        </div>
+                    </li>
+                    <li class="task-item">
+                        <h3 class="task-item__title">Task 2</h3>
+                        <p class="task-item__date">2023-7-10</p>
+                        <p class="task-item__desc">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Doloribus, eaque.
+                        </p>
+                        <div class="task-item__controls">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                            <i class="fa-solid fa-trash-can"></i>
+                        </div>
+                    </li>
+                    <li class="task-item">
+                        <h3 class="task-item__title">Task 2</h3>
+                        <p class="task-item__date">2023-7-10</p>
+                        <p class="task-item__desc">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Doloribus, eaque.
+                        </p>
+                        <div class="task-item__controls">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                            <i class="fa-solid fa-trash-can"></i>
+                        </div>
+                    </li>
+                    <li class="task-item">
+                        <h3 class="task-item__title">Task 2</h3>
+                        <p class="task-item__date">2023-7-10</p>
+                        <p class="task-item__desc">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Doloribus, eaque.
+                        </p>
+                        <div class="task-item__controls">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                            <i class="fa-solid fa-trash-can"></i>
+                        </div>
+                    </li>
+                    <li class="task-item">
+                        <h3 class="task-item__title">Task 2</h3>
+                        <p class="task-item__date">2023-7-10</p>
+                        <p class="task-item__desc">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Doloribus, eaque.
+                        </p>
+                        <div class="task-item__controls">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                            <i class="fa-solid fa-trash-can"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="total">
+                <p>You have <span>4</span> pending tasks</p>
+                <button type="button">Clear All</button>
+            </div>
+        </section>
+        <!-- Modal -->
+        <form id="modal">
+            <div class="modal-content">
+                <div class="modal-head">
+                    <h2>Add New Task</h2>
+                    <i class="fa-solid fa-xmark btn-modal__close-js"></i>
+                </div>
+                <div class="modal-body">
+                    <div class="modal__form-control">
+                        <h3>Task Title</h3>
+                        <input type="text" id="textTask" name="" id="" />
+                        <div class="msg msg-textTask"></div>
+                    </div>
+                    <div class="modal__form-control">
+                        <h3>Due Date</h3>
+                        <input type="date" id="textDate" name="" id="" />
+                        <div class="msg msg-textDate"></div>
+                    </div>
+                    <div class="modal__form-control">
+                        <h3>Description</h3>
+                        <textarea
+                            name=""
+                            id="textArea"
+                            id=""
+                            cols="30"
+                            rows="10"
+                        ></textarea>
+                        <div class="msg msg-textArea"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="btn-controls-modal">
+                        <button class="btn-modal__close-js btn-modal__close">
+                            Close
+                        </button>
+                        <button class="btn-modal__add" type="submit">
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </body>
     <script src="./modal.js"></script>
     <script src="./main.js"></script>
 </html>
