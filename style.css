@@ -292,3 +292,26 @@ h1 {
     background-color: transparent;
     height: auto;
 }
+
+/* editBtn */
+
+#editBtn-yes {
+    color: green;
+}
+#editBtn-cancel {
+    color: rgb(255, 0, 0);
+}
+
+.taskChange {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 2px 8px;
+}
+
+.task-item__title.taskChange {
+    margin-bottom: 4px;
+}
+.task-item__desc.taskChange {
+    margin: 8px 0 5px 0;
+}

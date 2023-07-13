@@ -93,8 +93,73 @@ let createTasks = () => {
     totalTask();
 };
 
+// handler btnYes
+let handlerBtnYes = (element, temporary) => {
+    let selectedElement = element.parentElement.parentElement;
+    let selectedTaskContent = selectedElement.children[0].innerHTML;
+    let selectedDateContent = selectedElement.children[1].innerHTML;
+    let selectedDescContent = selectedElement.children[2].innerHTML;
+    console.log(temporary);
+};
+
+// handler editBtn-cancel
+let handlerEditBtnCancel = (element, temporary, taskId) => {
+    let selectedElement = element.parentElement.parentElement;
+    let selectedTask = selectedElement.children[0];
+    let selectedDate = selectedElement.children[1];
+    let selectedDesc = selectedElement.children[2];
+
+    let taskData = checkTask.pop();
+    if (taskData) {
+        selectedTask.innerHTML = taskData.text;
+        selectedDate.innerHTML = taskData.date;
+        selectedDesc.innerHTML = taskData.desc;
+    }
+    handlerCancelEditContent(selectedTask);
+    handlerCancelEditContent(selectedDate);
+    handlerCancelEditContent(selectedDesc);
+
+    let selectedControl = selectedElement.children[3];
+    selectedControl.innerHTML = `
+    <i onclick="editTask(this)" class="fa-regular fa-pen-to-square"></i>
+    <i onclick="actionRemoveTask(this)" class="fa-solid fa-trash-can"></i>
+    `;
+};
+
+// handler contentEditnalbe
+let handlerEditContent = (element) => {
+    element.setAttribute("contenteditable", "true");
+    element.classList.add("taskChange");
+};
+// handler contentEditnalbe
+let handlerCancelEditContent = (element) => {
+    element.removeAttribute("contenteditable");
+    element.classList.remove("taskChange");
+};
+
 // editTask
-let editTask = (element) => {};
+let checkTask = [];
+let editTask = (element) => {
+    let selectedElement = element.parentElement.parentElement;
+    let selectedTask = selectedElement.children[0];
+    let selectedDate = selectedElement.children[1];
+    let selectedDesc = selectedElement.children[2];
+    let selectedControl = selectedElement.children[3];
+    checkTask.push({
+        text: selectedTask.innerHTML,
+        date: selectedDate.innerHTML,
+        desc: selectedDesc.innerHTML,
+    });
+
+    selectedControl.innerHTML = `
+    <i class="fa-solid fa-check editBtn " onclick="handlerBtnYes(this, checkTask)"  id="editBtn-yes"></i>
+    <i class="fa-solid fa-ban editBtn " onclick="handlerEditBtnCancel(this , checkTask)" id="editBtn-cancel"></i>
+    <i onclick = "actionRemoveTask(this)" class="fa-solid fa-trash-can"></i>
+    `;
+    handlerEditContent(selectedTask);
+    handlerEditContent(selectedDate);
+    handlerEditContent(selectedDesc);
+};
 
 // Khởi tạo mảng tạm để lưu trữ các phần tử đã xóa
 let deletedTasks = [];
