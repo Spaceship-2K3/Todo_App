@@ -113,6 +113,7 @@ h1 {
     border-radius: 10px;
     background-color: rgb(242, 214, 248);
     width: 96%;
+    height: 120px;
 }
 .task-item__title {
     font-size: 18px;
@@ -170,13 +171,12 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* display: none; */
+    display: none;
 }
 
 .modal-content {
     background-color: #fff;
     width: 500px;
-
     border-radius: 12px;
     font-weight: 300;
 }
@@ -265,4 +265,30 @@ h1 {
 .msg {
     color: red;
     margin-top: 8px;
+}
+
+/* task-item--undo */
+.task-item--undo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 8px 16px;
+    background-color: rgb(255, 45, 45);
+    border-radius: 6px;
+    color: #fbf3f3;
+    cursor: pointer;
+    font-size: 20px;
+}
+.task-item--undo h3 {
+    font-weight: 700;
+}
+
+.task-item:has(.task-item--undo) {
+    background-color: black;
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+    height: auto;
 }

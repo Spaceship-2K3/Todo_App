@@ -28,84 +28,11 @@
 
             <div id="tasks">
                 <h2>Tasks</h2>
-                <ul class="tasks-list">
-                    <li class="task-item">
-                        <h3 class="task-item__title">Task 1</h3>
-                        <p class="task-item__date">2023-7-10</p>
-                        <p class="task-item__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Doloribus, eaque.
-                        </p>
-                        <div class="task-item__controls">
-                            <i class="fa-regular fa-pen-to-square"></i>
-                            <i class="fa-solid fa-trash-can"></i>
-                        </div>
-                    </li>
-                    <li class="task-item">
-                        <h3 class="task-item__title">Task 2</h3>
-                        <p class="task-item__date">2023-7-10</p>
-                        <p class="task-item__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Doloribus, eaque.
-                        </p>
-                        <div class="task-item__controls">
-                            <i class="fa-regular fa-pen-to-square"></i>
-                            <i class="fa-solid fa-trash-can"></i>
-                        </div>
-                    </li>
-                    <li class="task-item">
-                        <h3 class="task-item__title">Task 2</h3>
-                        <p class="task-item__date">2023-7-10</p>
-                        <p class="task-item__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Doloribus, eaque.
-                        </p>
-                        <div class="task-item__controls">
-                            <i class="fa-regular fa-pen-to-square"></i>
-                            <i class="fa-solid fa-trash-can"></i>
-                        </div>
-                    </li>
-                    <li class="task-item">
-                        <h3 class="task-item__title">Task 2</h3>
-                        <p class="task-item__date">2023-7-10</p>
-                        <p class="task-item__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Doloribus, eaque.
-                        </p>
-                        <div class="task-item__controls">
-                            <i class="fa-regular fa-pen-to-square"></i>
-                            <i class="fa-solid fa-trash-can"></i>
-                        </div>
-                    </li>
-                    <li class="task-item">
-                        <h3 class="task-item__title">Task 2</h3>
-                        <p class="task-item__date">2023-7-10</p>
-                        <p class="task-item__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Doloribus, eaque.
-                        </p>
-                        <div class="task-item__controls">
-                            <i class="fa-regular fa-pen-to-square"></i>
-                            <i class="fa-solid fa-trash-can"></i>
-                        </div>
-                    </li>
-                    <li class="task-item">
-                        <h3 class="task-item__title">Task 2</h3>
-                        <p class="task-item__date">2023-7-10</p>
-                        <p class="task-item__desc">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Doloribus, eaque.
-                        </p>
-                        <div class="task-item__controls">
-                            <i class="fa-regular fa-pen-to-square"></i>
-                            <i class="fa-solid fa-trash-can"></i>
-                        </div>
-                    </li>
-                </ul>
+                <ul class="tasks-list" id="tasks-list"></ul>
             </div>
             <div id="total">
-                <p>You have <span>4</span> pending tasks</p>
-                <button type="button">Clear All</button>
+                <p>You have <span id="numberTask">0</span> pending tasks</p>
+                <button type="button" id="btn-Clear-All">Clear All</button>
             </div>
         </section>
         <!-- Modal -->
@@ -140,7 +67,10 @@
                 </div>
                 <div class="modal-footer">
                     <div class="btn-controls-modal">
-                        <button class="btn-modal__close-js btn-modal__close">
+                        <button
+                            type="button"
+                            class="btn-modal__close-js btn-modal__close"
+                        >
                             Close
                         </button>
                         <button class="btn-modal__add" type="submit">
