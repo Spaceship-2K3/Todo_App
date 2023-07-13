@@ -94,12 +94,33 @@ let createTasks = () => {
 };
 
 // handler btnYes
-let handlerBtnYes = (element, temporary) => {
+let handlerBtnYes = (element) => {
     let selectedElement = element.parentElement.parentElement;
     let selectedTaskContent = selectedElement.children[0].innerHTML;
     let selectedDateContent = selectedElement.children[1].innerHTML;
     let selectedDescContent = selectedElement.children[2].innerHTML;
-    console.log(temporary);
+    let selectedTask = selectedElement.children[0];
+    let selectedDate = selectedElement.children[1];
+    let selectedDesc = selectedElement.children[2];
+    let searchTaskIndex = data.findIndex((item, index) => {
+        return selectedElement.id == index;
+    });
+    if (searchTaskIndex !== -1) {
+        data[searchTaskIndex].task = selectedTaskContent;
+        data[searchTaskIndex].date = selectedDateContent;
+        data[searchTaskIndex].desc = selectedDescContent;
+
+        // Lưu dữ liệu đã cập nhật vào localStorage và giữ nguyên thứ tự
+        localStorage.setItem("data", JSON.stringify(data));
+        let selectedControl = selectedElement.children[3];
+        handlerCancelEditContent(selectedTask);
+        handlerCancelEditContent(selectedDate);
+        handlerCancelEditContent(selectedDesc);
+        selectedControl.innerHTML = `
+        <i onclick="editTask(this)" class="fa-regular fa-pen-to-square"></i>
+        <i onclick="actionRemoveTask(this)" class="fa-solid fa-trash-can"></i>
+        `;
+    }
 };
 
 // handler editBtn-cancel
@@ -152,7 +173,7 @@ let editTask = (element) => {
     });
 
     selectedControl.innerHTML = `
-    <i class="fa-solid fa-check editBtn " onclick="handlerBtnYes(this, checkTask)"  id="editBtn-yes"></i>
+    <i class="fa-solid fa-check editBtn " onclick="handlerBtnYes(this)"  id="editBtn-yes"></i>
     <i class="fa-solid fa-ban editBtn " onclick="handlerEditBtnCancel(this , checkTask)" id="editBtn-cancel"></i>
     <i onclick = "actionRemoveTask(this)" class="fa-solid fa-trash-can"></i>
     `;
